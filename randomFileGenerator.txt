@@ -1,0 +1,122 @@
+/*
+Random file generation 
+Written by Bhaskar Bhattacharya
+Copyright 2016
+
+Code used in lecture 4
+*/
+
+#include <iostream>
+#include <fstream>
+#include <stdlib.h>
+#include <time.h>
+#include <string>
+using namespace std;
+
+#define SQUARE "square"
+#define RECTANGLE "rect"
+#define CIRCLE "circle"
+
+fstream fp; //Global file pointer variable can be accessed by everything after it
+
+/*Advanced:
+Use the RandomFileGenerator.cpp to create a random file
+Create a new function called "reader" that reads the file and outputs the calculated areas
+*/
+
+void write_square(){
+	fp << SQUARE << " " << rand() % 100 << endl;
+}
+void write_rectangle(){
+	fp << RECTANGLE << " " << rand() % 100 << " " << rand() % 100 << endl;
+}
+void write_circle(){
+	fp << CIRCLE << " " << rand() % 100 << endl;
+}
+
+float sqArea(int num) {
+	return num * num;
+}
+
+float rectArea(int len, int wid) {
+	return len * wid;
+}
+
+float circleArea(int num) {
+	return 3.14*num*num;
+}
+
+//this is the main function, but because I put all my files in the same project, VS gets mad at me because then there are too many main functions it's trying to compile
+int main() {
+	
+	// Open file
+	fp.open("shapes.txt", ios::out);
+	
+	//Make sure the file has opened
+	if (!fp){
+		cerr << "Oops couldn't open the file" << endl;
+		return -1;
+	}
+
+	//Put the seed value
+	srand(time(NULL));
+	
+	//Start the loop for 100 random numbers
+	for (int i = 0; i < 100; i++){
+
+		// Create a random number b/w 0 and 2 (sq, rect, circ)
+		int idx = rand() % 3;
+
+		//Switch accordingly and write
+		switch (idx){
+		case(0) :
+			write_square();
+			break;
+		case(1) :
+			write_rectangle();
+			break;
+		case(2) :
+			write_circle();
+			break;
+
+		//Putting a default is good coding practice and should be used always
+		default:
+			break;
+		}
+	}
+
+	//Close the file
+	fp.close();
+
+
+	//advanced challenge
+	ifstream infile;
+	infile.open("shapes.txt");
+	string line;
+
+	while (getline(infile, line, ' ')) {
+		cout << "The shape is: " << line << endl;
+		if (line.compare("square") == 0) {
+			getline(infile, line);
+			cout << "sqArea: " << sqArea(stoi(line)) << endl;
+		}
+		if (line.compare("rect") == 0) {
+			string len, wid;
+			getline(infile, len, ' ');
+			getline(infile, wid);
+			cout << "rectArea: " << rectArea(stoi(len), stoi(wid)) << endl;
+		}
+		if (line.compare("circle") == 0) {
+			getline(infile, line);
+			cout << "circleArea: " << circleArea(stoi(line)) << endl;
+		}
+		
+	}
+
+	
+
+	
+
+	//Return with 0
+	return 0;
+}
