@@ -13,7 +13,7 @@ float Square::getArea() {
 }
 
 std::string Square::getAreaSentence(Square s) {
-	return "Given that the width of one side is " + std::to_string(s.getWidth()) + " the area of the square is: " + std::to_string(s.getArea());
+	return "Given that the width of one side is " + std::to_string(s.getWidth()) + ", the area of the square is: " + std::to_string(s.getArea());
 }
 
 float Square::getPerimeter() {
@@ -21,7 +21,7 @@ float Square::getPerimeter() {
 }
 
 std::string Square::getPerimeterSentence(Square s) {
-	return "Given that the width of one side is " + std::to_string(s.getWidth()) + " the perimeter of the square is: " + std::to_string(s.getPerimeter());
+	return "Given that the width of one side is " + std::to_string(s.getWidth()) + ", the perimeter of the square is: " + std::to_string(s.getPerimeter());
 }
 
 float Square::getWidth() {
