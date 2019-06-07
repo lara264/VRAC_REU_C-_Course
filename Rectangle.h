@@ -7,6 +7,10 @@ public:
 	Rectangle(float len, float width);	// The constructor prototype
 	~Rectangle();	// The destructor prototype
 
+	Rectangle definingRect();
+
+	void doMath(Rectangle r);
+
 	void setArea(float area);	// Setter
 	void setLen(float len);
 	void setWidth(float width);

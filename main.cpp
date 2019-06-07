@@ -1,48 +1,36 @@
-// main.cpp : Defines the entry point for the console application.
-//
-
-#include "Rectangle.h"	// Coppies all the rectangle code into this file
 #include <iostream>
 
-Rectangle definingRect() {
-	std::cout << "Hi, what's the length and width of your rectangle? " << std::endl;
+#include "square.h"
+#include "Rectangle.h"
 
-	float len, wid;
-	std::cin >> len >> wid;
+int main() {
 
-	Rectangle r(len, wid);
-	return r;
-}
+	Square s = Square(5.0);
+	std::cout << s.area() << std::endl;
+	s.setColor("magenta");
+	std::cout << s.returnColor() << std::endl;
 
-void doMath(Rectangle r) {
-	std::cout << "what is the area of the rectangle given that the length is " << r.getLen() << " and the width is " << r.getWidth() << std::endl;
+	Square hi = Square(3.0);
+	std::cout << hi.area() << std::endl;
+	hi.setColor("sky blue");
+	std::cout << hi.returnColor() << std::endl;
 
-	float response;
+	Square anotherOne = Square(8.0);
+	std::cout << anotherOne.area() << std::endl;
+	anotherOne.setColor("violet");
+	std::cout << anotherOne.returnColor() << std::endl;
 
-	std::cin >> response;
+	Rectangle aRec = aRec.definingRect();
 
-	if (response == r.getArea()) std::cout << "you can do math!" << std::endl;
-	else {
-		std::cout << "hmm, that wasn't the right answer" << std::endl;
-		std::cout << "the right answer was " << r.getArea() << std::endl;
-	}
-}
+	aRec.doMath(aRec);
 
-int main()
-{
+	Rectangle anotherR = anotherR.definingRect();
 
-	Rectangle aRec = definingRect();
-
-	doMath(aRec);
-
-	Rectangle anotherR = definingRect();
-
-	doMath(anotherR);
+	anotherR.doMath(anotherR);
 
 	//how to call the deconstructor
 	//aRec.~Rectangle();
 
-	
-    return 0;
+	return 0;
 }
 
