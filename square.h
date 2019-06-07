@@ -7,7 +7,17 @@ class Square:public Shape {
 	public:
 		Square(float w);
 		~Square();
-		float area();
+
+		float getArea();
+		std::string getAreaSentence(Square s);
+
+		float getPerimeter();
+		std::string getPerimeterSentence(Square s);
+
+		float getWidth();
+
+		std::string getInfo(Square s);
+
 	protected:
 		float width;
 };

@@ -15,3 +15,11 @@ void Shape::setColor(std::string c) {
 std::string Shape::returnColor() {
 	return color;
 }
+
+float Shape::getArea() {
+	return 0.0;
+}
+
+float Shape::getPerimeter() {
+	return 0.0;
+}

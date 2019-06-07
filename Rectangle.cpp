@@ -37,11 +37,6 @@ void Rectangle::doMath(Rectangle r) {
 	}
 }
 
-void Rectangle::setArea(float area)
-{
-	m_area = area;
-}
-
 void Rectangle::setLen(float len) {
 	len = len;
 }
@@ -62,7 +57,6 @@ float Rectangle::getArea() {
 	return len * width;
 }
 
-float Rectangle::returnArea()
-{
-	return m_area;
+float Rectangle::getPerimeter() {
+	return (len * 2) + (width * 2);
 }

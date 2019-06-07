@@ -1,7 +1,9 @@
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
 
-class Rectangle {
+#include "shape.h"
+
+class Rectangle:public Shape {
 
 public:
 	Rectangle(float len, float width);	// The constructor prototype
@@ -11,18 +13,16 @@ public:
 
 	void doMath(Rectangle r);
 
-	void setArea(float area);	// Setter
-	void setLen(float len);
+	void setLen(float len); // Setter
 	void setWidth(float width);
 
 	float getLen();
 	float getWidth();
 	float getArea();
-
-	float returnArea();	// Getter
+	float getPerimeter();
 
 protected:
-	float m_area;	// Member variable
+	// Member variables
 	float len;
 	float width;
 };

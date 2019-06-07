@@ -5,28 +5,34 @@
 
 int main() {
 
+	//first instance of square
 	Square s = Square(5.0);
-	std::cout << s.area() << std::endl;
 	s.setColor("magenta");
-	std::cout << s.returnColor() << std::endl;
+	std::cout << s.getInfo(s) << std::endl << std::endl;;
 
+	//second instance of square
 	Square hi = Square(3.0);
-	std::cout << hi.area() << std::endl;
 	hi.setColor("sky blue");
-	std::cout << hi.returnColor() << std::endl;
+	std::cout << hi.getInfo(hi) << std::endl << std::endl;;
 
+	//third instance of square
 	Square anotherOne = Square(8.0);
-	std::cout << anotherOne.area() << std::endl;
 	anotherOne.setColor("violet");
-	std::cout << anotherOne.returnColor() << std::endl;
+	std::cout << anotherOne.getInfo(anotherOne) << std::endl << std::endl;;
 
+	//first instance of rectangle
 	Rectangle aRec = aRec.definingRect();
 
 	aRec.doMath(aRec);
+	aRec.setColor("gray");
+	std::cout << "The color of the rectangle is: " << aRec.returnColor() << std::endl;
 
+	//second instance of rectangle
 	Rectangle anotherR = anotherR.definingRect();
-
+	
 	anotherR.doMath(anotherR);
+	anotherR.setColor("lime green");
+	std::cout << "The color of the rectangle is: " << anotherR.returnColor() << std::endl;
 
 	//how to call the deconstructor
 	//aRec.~Rectangle();
