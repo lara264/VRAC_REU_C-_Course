@@ -4,6 +4,22 @@
 #include "Rectangle.h"
 #include "Triangle.h"
 
+std::string choice(std::string response) {
+	std::string responseLowered = "";
+	for (auto c : response) {
+		c = tolower(c);
+		responseLowered += c;
+	}
+
+	std::cout << responseLowered << std::endl;
+
+	if (responseLowered.compare("rectangle") == 0) {
+		
+	}
+
+	return "";
+}
+
 int main() {
 
 	//undefined variables in shape
@@ -57,6 +73,29 @@ int main() {
 
 	//how to call the deconstructor
 	//aRec.~Rectangle();
+
+	//let's make a mess lol
+
+	bool keepGoing = true;
+	std::string response;
+
+	std::cout << "Hi, welcome to shapes (a little boring, but bear with me please :)" << std::endl;
+	
+	while (keepGoing) {
+
+		std::cin >> response;
+
+		std::cout << choice(response) << std::endl;
+
+
+
+		std::cout << "keep going?";
+		std::cin >> response;
+
+		if (response.compare("yes") == 0) keepGoing = true;
+		else keepGoing = false;
+	
+	}
 
 	return 0;
 }
