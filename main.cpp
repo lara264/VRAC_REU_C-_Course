@@ -8,7 +8,7 @@ int main() {
 	//first instance of square
 	Square s = Square(5.0);
 	s.setColor("magenta");
-	std::cout << s.getInfo(s) << std::endl << std::endl;;
+	std::cout << s.getInfo(s) << std::endl << std::endl;
 
 	//second instance of square
 	Square hi = Square(3.0);
