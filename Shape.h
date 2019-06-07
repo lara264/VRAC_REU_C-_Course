@@ -12,6 +12,8 @@ public:
 	void setColor(std::string c);
 	std::string returnColor();
 
+	bool varsDefined();
+
 	//area function
 	float getArea();
 

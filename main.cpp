@@ -6,6 +6,10 @@
 
 int main() {
 
+	//undefined variables in shape
+	Shape aShape;
+	std::cout << aShape.returnColor() << std::endl;
+
 	//first instance of square
 	Square s = Square(5.0);
 	s.setColor("magenta");

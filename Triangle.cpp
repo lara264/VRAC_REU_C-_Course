@@ -24,13 +24,13 @@ Triangle Triangle::definingTri() {
 	return r;
 }
 
-bool Triangle::varsDefined(float b, float h) {
-	if (b == NULL || h == NULL) return false;
+bool Triangle::varsDefined() {
+	if (base == NULL || height == NULL) return false;
 	return true;
 }
 
 float Triangle::getArea() {
-	if (varsDefined(base, height)) return (base + height) / 2;
+	if (varsDefined()) return (base + height) / 2;
 	std::cout << "Either the base and/or the height are not defined. Please set these values before trying to calculate the area" << std::endl;
 	return -1;
 }

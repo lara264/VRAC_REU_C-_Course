@@ -12,7 +12,7 @@ public:
 
 	Triangle definingTri();
 
-	bool varsDefined(float b, float h);
+	bool varsDefined();
 
 	float getArea();
 

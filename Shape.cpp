@@ -1,7 +1,7 @@
 #include "shape.h"
 
 Shape::Shape() {
-
+	color = "";
 }
 
 Shape::~Shape() {
@@ -13,7 +13,13 @@ void Shape::setColor(std::string c) {
 }
 
 std::string Shape::returnColor() {
-	return color;
+	if (varsDefined()) return color;
+	return "color has not been defined";
+}
+
+bool Shape::varsDefined() {
+	if (color.compare("") == 0) return false;
+	return true;
 }
 
 float Shape::getArea() {
