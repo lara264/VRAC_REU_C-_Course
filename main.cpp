@@ -2,6 +2,7 @@
 
 #include "Square.h"
 #include "Rectangle.h"
+#include "Triangle.h"
 
 int main() {
 
@@ -18,7 +19,11 @@ int main() {
 	//third instance of square
 	Square anotherOne = Square(8.0);
 	anotherOne.setColor("violet");
-	std::cout << anotherOne.getInfo(anotherOne) << std::endl << std::endl;;
+	std::cout << anotherOne.getInfo(anotherOne) << std::endl << std::endl;
+
+	//square with no width defined
+	Square boop;
+	std::cout << boop.getArea() << std::endl;
 
 	//first instance of rectangle
 	Rectangle aRec = aRec.definingRect();
@@ -33,6 +38,18 @@ int main() {
 	anotherR.doMath(anotherR);
 	anotherR.setColor("lime green");
 	std::cout << "The color of the rectangle is: " << anotherR.returnColor() << std::endl;
+
+	//first instance of triangle
+	Triangle t = t.definingTri();
+	t.setColor("white");
+	std::cout << t.getInfo(t) << std::endl;
+
+	//undefined triangle variables
+	Triangle t2;
+	std::cout << t2.getBase() << std::endl;
+	t2.setBase(5);
+	std::cout << t2.getBase() << std::endl;
+	std::cout << t2.getArea() << std::endl;
 
 	//how to call the deconstructor
 	//aRec.~Rectangle();

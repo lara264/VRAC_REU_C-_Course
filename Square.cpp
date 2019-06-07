@@ -1,4 +1,8 @@
-#include "square.h"
+#include "Square.h"
+
+Square::Square() {
+	width = NULL;
+}
 
 Square::Square(float w) {
 	width = w;
@@ -9,6 +13,10 @@ Square::~Square() {
 }
 
 float Square::getArea() {
+	if (width == NULL) {
+		std::cout << "Width has not been defined. Please set the width" << std::endl;
+		return -1;
+	}
 	return width * width;
 }
 

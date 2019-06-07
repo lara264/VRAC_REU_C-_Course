@@ -1,10 +1,11 @@
 #ifndef SQUARE_H
 #define SQUARE_H
 
-#include "shape.h"
+#include "Shape.h"
 
 class Square :public Shape {
 public:
+	Square();
 	Square(float w);
 	~Square();
 
