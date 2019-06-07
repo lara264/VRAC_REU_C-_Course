@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "square.h"
+#include "Square.h"
 #include "Rectangle.h"
 
 int main() {
